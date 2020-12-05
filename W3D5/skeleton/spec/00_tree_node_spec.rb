@@ -1,5 +1,6 @@
 require 'rspec'
 require '00_tree_node'
+require "byebug"
 
 describe PolyTreeNode do
   let(:node1) { PolyTreeNode.new('root') }
@@ -38,6 +39,7 @@ describe PolyTreeNode do
     end
 
     it "does not add the same node twice" do
+      # debugger
       node3.parent = node1
       expect(node1.children).to eq([node2, node3])
     end
