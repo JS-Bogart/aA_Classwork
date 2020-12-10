@@ -37,10 +37,24 @@ end
 
 def stock_picker(stock_prices)
     lowest_price = stock_prices[0]
-    lowest_idx = 
-    highest_prices = nil
-    highest_idx = nil
+    lowest_day = 0
+
+    highest_price = stock_prices[0]
+    highest_day = 0
+
     (1...stock_prices.length).each do |day|
-        
+        if stock_prices[day] < lowest_price
+            lowest_price = stock_prices[day]
+            lowest_day = day
+        end
     end
+
+    (1...stock_prices.length).each do |day|
+        if stock_prices[day] > highest_price && day > lowest_day
+            highest_price = stock_prices[day]
+            highest_day = day
+        end
+    end
+
+    [lowest_day, highest_day]
 end

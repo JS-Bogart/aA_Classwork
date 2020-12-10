@@ -47,7 +47,17 @@ describe "#stock_picker" do
     end
 
     it "returns an ordered pair of days" do
-        expect(stock_picker(stock_prices)[0] < stock_picker(stock_prices)[1]).to eq(false)
+        expect(stock_picker(stock_prices)[0] < stock_picker(stock_prices)[1]).to eq(true)
     end
+
+end
+
+describe HanoiTowers do
+    subject(:towers) { HanoiTowers.new }
+
+    describe "#initialize" do
+        it "sets towers to an array with three subarrays"
+    end
+
 
 end
