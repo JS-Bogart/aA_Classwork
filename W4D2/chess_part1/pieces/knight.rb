@@ -1,5 +1,7 @@
 require_relative "piece.rb"
 require_relative "../modules/stepable.rb"
+require_relative "../board.rb"
+require "byebug"
 
 class Knight < Piece
   include Stepable
@@ -27,3 +29,7 @@ class Knight < Piece
 
   
 end
+
+board = Board.new
+knight = Knight.new(:white, board, [1, 1])
+p knight.moves
