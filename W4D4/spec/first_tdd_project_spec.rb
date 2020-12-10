@@ -68,11 +68,29 @@ describe HanoiTowers do
     end
 
     describe "#move_disk" do
-        it "takes the top disk from a stack" do
-            
+        it "takes the top disk from a stack and places the chosen disk on top of another stack" do
+            towers.move_disk
+            expect(towers.stacks == [[2, 3, 4, 5],[1],[]] || towers.stacks == [[2, 3, 4, 5],[],[1]]).to eq(true)
         end
 
-        it "places the chosen disk on top of another stack"
+        it "never has larger disks on top of smaller disks" do
+            towers.move_disk
+            expect(towers.stacks[0]).to eq(towers.stacks[0].sort)
+            expect(towers.stacks[1]).to eq(towers.stacks[1].sort)
+            expect(towers.stacks[2]).to eq(towers.stacks[2].sort)
+        end
+
+        it "places the disk on another stack" do
+            stack1 = towers.stacks[0].dup
+            stack2 = towers.stacks[1].dup
+            stack3 = towers.stacks[2].dup
+
+            towers.move_disk
+            expect(towers.stacks[0]).to_not eq(stack1)
+            expect(towers.stacks[1]).to_not eq(stack2)
+            expect(towers.stacks[2]).to_not eq(stack3)
+        end
+
     end
 
 
