@@ -58,3 +58,13 @@ def stock_picker(stock_prices)
 
     [lowest_day, highest_day]
 end
+
+class HanoiTowers
+    attr_reader :stacks
+    
+    def initialize(num)
+        @stacks = Array.new(3) { Array.new}
+        (1..num).each { |disc| @stacks[0] << disc }
+    end
+
+end

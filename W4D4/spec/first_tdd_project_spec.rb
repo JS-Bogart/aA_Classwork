@@ -53,10 +53,26 @@ describe "#stock_picker" do
 end
 
 describe HanoiTowers do
-    subject(:towers) { HanoiTowers.new }
+    subject(:towers) { HanoiTowers.new(5) }
 
     describe "#initialize" do
-        it "sets towers to an array with three subarrays"
+
+        it "sets stacks to a 2D array with three subarrays" do
+            expect(towers.stacks.length).to eq(3)
+        end
+
+        it "sets a specified number of stacks to the first subarray" do
+            expect(towers.stacks[0]).to eq([1, 2, 3, 4, 5])
+        end
+
+    end
+
+    describe "#move_disk" do
+        it "takes the top disk from a stack" do
+            
+        end
+
+        it "places the chosen disk on top of another stack"
     end
 
 
