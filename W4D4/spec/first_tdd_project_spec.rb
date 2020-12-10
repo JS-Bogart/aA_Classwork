@@ -3,6 +3,8 @@ require "first_tdd_project"
 
 describe 'Array#my_uniq' do
 
+    #want to test if my_uniq doesn't use Array#uniq
+
     it "removes duplicates from an array" do
         expect([1, 2, 1, 3, 3].my_uniq.length).to eq(3)
     end
@@ -26,9 +28,26 @@ describe 'Array#two_sum' do
 end
 
 describe "#my_transpose" do
+
+    #want to test if my_transpose doesn't use Array#transpose
+
     let(:matrix) { [[0, 1, 2],[3, 4, 5],[6, 7, 8]] }
 
     it "returns a tranposed matrix" do
         expect(my_transpose(matrix)).to eq([[0, 3, 6],[1, 4, 7],[2, 5, 8]])
     end
+
+end
+
+describe "#stock_picker" do
+    let(:stock_prices) { [0, 99, 100] } 
+
+    it "returns a pair of numbers" do
+        expect(stock_picker(stock_prices).length).to eq(2)
+    end
+
+    it "returns an ordered pair of days" do
+        expect(stock_picker(stock_prices)[0] < stock_picker(stock_prices)[1]).to eq(false)
+    end
+
 end

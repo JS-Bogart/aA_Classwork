@@ -33,3 +33,14 @@ def my_transpose(matrix)
 
     answer
 end
+
+
+def stock_picker(stock_prices)
+    lowest_price = stock_prices[0]
+    lowest_idx = 
+    highest_prices = nil
+    highest_idx = nil
+    (1...stock_prices.length).each do |day|
+        
+    end
+end
