@@ -1,4 +1,5 @@
 #time complexity O(n^2), space complexity is O(1)
+require "byebug"
 
 def my_min(arr)
     arr.each do |ele|
@@ -31,11 +32,18 @@ end
 
 #time O(n), space O(1)
 def largest_contiguous_subsum2(arr)
-    largest = arr.first
+    debugger
+    global = arr.first
     cur = arr.first
-
-
-
+    arr.drop(1).each_with_index do |ele, idx|
+        if ele > cur && cur < 0
+            cur = ele
+        else
+            cur += ele
+        end
+        global = cur if cur > global
+    end
+    global
 end
 
                   
