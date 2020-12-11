@@ -23,3 +23,24 @@ end
 
 # p second_anagram?("gizmo", "sally")    #=> false
 # p second_anagram?("elvis", "lives")    #=> true
+
+#TC O(nlogn) SC O(n)
+def third_anagram?(str1, str2)
+    str1.chars.sort == str2.chars.sort
+end
+
+#  p third_anagram?("gizmo", "sally")    #=> false
+#  p third_anagram?("elvis", "lives")    #=> true
+
+#TC O(n) SC O(n)
+def fourth_anagram?(str1, str2)
+    h1 = Hash.new(0) 
+
+    str1.each_char {|ch| h1[ch] += 1}
+    str2.each_char {|ch| h1[ch] -= 1}
+
+    h1.values.all? {|v| v == 0}
+end
+
+p fourth_anagram?("gizmo", "sally")    #=> false
+p fourth_anagram?("elvis", "lives")    #=> true
