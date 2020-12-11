@@ -1,11 +1,11 @@
 # TC = O(n^2)
 def bad_two_sum?(arr, target)
-    (0...arr.length).each do |i|
-        (i+1...arr.length).each do |j|
-            return true if arr[i] + arr[j] == target
-        end
+  (0...arr.length).each do |i|
+    (i + 1...arr.length).each do |j|
+      return true if arr[i] + arr[j] == target
     end
-    false
+  end
+  false
 end
 
 # arr = [0, 1, 5, 7]
@@ -14,20 +14,32 @@ end
 
 # TC = O(nlgn), SC = O(n)
 def okay_two_sum?(arr, target)
-    arr = arr.sort #nlgn
-    i = 0
-    j = arr.length-1
-    while i < j
-        return true if arr[i] + arr[j] == target
-        if arr[i] + arr[j] < target
-            i += 1
-        else
-            j -= 1
-        end
+  arr = arr.sort # nlgn
+  i = 0
+  j = arr.length - 1
+  while i < j
+    return true if arr[i] + arr[j] == target
+
+    if arr[i] + arr[j] < target
+      i += 1
+    else
+      j -= 1
     end
-    false
+  end
+  false
 end
 
 arr = [0, 1, 5, 7]
 p okay_two_sum?(arr, 6) # => should be true
 p okay_two_sum?(arr, 10) # => should be false
+
+# TC = O(n)  SC = O(n)
+def two_sum?(arr, target)
+  hash = {}
+  arr.each do |ele|
+    return true if hash.key?(target - ele)
+
+    hash[ele] = 0
+  end
+  false
+end
