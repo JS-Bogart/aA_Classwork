@@ -58,6 +58,8 @@ def stock_picker(stock_prices)
         end
     end
 
+
+    return nil if lowest_day > highest_day
     [lowest_day, highest_day]
 end
 
@@ -65,6 +67,7 @@ class HanoiTowers
     attr_reader :stacks, :size
     
     def initialize(num)
+        raise "Number must be 1 or greater" if num < 1
         @size = num
         @stacks = Array.new(3) { Array.new}
         (1..num).each { |disc| @stacks[0] << disc }
@@ -97,7 +100,9 @@ class HanoiTowers
     end
 
     def render
-        stacks.each { |row| p row } 
+        puts
+        stacks.each { |row| p row.reverse } 
+        puts
     end
 
     def play
@@ -105,12 +110,14 @@ class HanoiTowers
             render
             move_disk
         end
+        puts
         puts "Congrats! You won, buddy!"
         puts "How about trying #{@size+1} disks next time?"
+        puts
     end
 
 end
 
 
-game = HanoiTowers.new(3)
+game = HanoiTowers.new(1)
 game.play
