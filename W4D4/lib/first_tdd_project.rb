@@ -1,3 +1,5 @@
+# Would like to check if methods we don't want are being used
+
 class Array
     def my_uniq
         hash = Hash.new(0)
@@ -60,21 +62,24 @@ def stock_picker(stock_prices)
 end
 
 class HanoiTowers
-    attr_reader :stacks
+    attr_reader :stacks, :size
     
     def initialize(num)
+        @size = num
         @stacks = Array.new(3) { Array.new}
         (1..num).each { |disc| @stacks[0] << disc }
     end
 
     def move_disk
         puts "Enter the stack number of the stack you would like to take a disk from (0, 1, or 2)"
+
         chosen_stack = gets.chomp.to_i
         while stacks[chosen_stack].empty? || stacks[chosen_stack] == nil
             puts "Invalid stack chosen"
             puts "Enter the stack number of the stack you would like to take a disk from (0, 1, or 2)"
             chosen_stack = gets.chomp.to_i
         end
+
         chosen_disk = stacks[chosen_stack].shift
         puts "Enter the stack number of the new stack you would like to place the disk"
         target_stack = gets.chomp.to_i
@@ -83,7 +88,16 @@ class HanoiTowers
             puts "Enter the stack number of the new stack you would like to place the disk"
             target_stack = gets.chomp.to_i
         end
+
         stacks[target_stack].unshift(chosen_disk)
     end
 
+    def won?
+        (stacks[1] == (1..size).to_a) || (stacks[2] == (1..size).to_a)
+    end
+
 end
+
+
+game = HanoiTowers.new(3)
+# game.play

@@ -82,14 +82,18 @@ describe HanoiTowers do
 
         it "places the disk on another stack" do
             stack1 = towers.stacks[0].dup
-
-
             towers.move_disk
             expect(towers.stacks[0]).to_not eq(stack1)
-
         end
 
     end
 
+    describe "#won" do
+        it "returns true if all the disks are on a single stack other than the starting stack" do
+            expect(towers.won?).to eq(false)
+            towers.stacks[0], towers.stacks[2] = towers.stacks[2], towers.stacks[0]
+            expect(towers.won?).to eq(true)
+        end
+    end
 
 end
