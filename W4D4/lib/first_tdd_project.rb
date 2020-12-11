@@ -67,4 +67,23 @@ class HanoiTowers
         (1..num).each { |disc| @stacks[0] << disc }
     end
 
+    def move_disk
+        puts "Enter the stack number of the stack you would like to take a disk from (0, 1, or 2)"
+        chosen_stack = gets.chomp.to_i
+        while stacks[chosen_stack].empty? || stacks[chosen_stack] == nil
+            puts "Invalid stack chosen"
+            puts "Enter the stack number of the stack you would like to take a disk from (0, 1, or 2)"
+            chosen_stack = gets.chomp.to_i
+        end
+        chosen_disk = stacks[chosen_stack].shift
+        puts "Enter the stack number of the new stack you would like to place the disk"
+        target_stack = gets.chomp.to_i
+        while target_stack == chosen_stack || stacks[target_stack] == nil
+            puts "Invalid stack chosen"
+            puts "Enter the stack number of the new stack you would like to place the disk"
+            target_stack = gets.chomp.to_i
+        end
+        stacks[target_stack].unshift(chosen_disk)
+    end
+
 end

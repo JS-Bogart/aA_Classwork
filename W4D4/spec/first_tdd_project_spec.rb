@@ -82,13 +82,11 @@ describe HanoiTowers do
 
         it "places the disk on another stack" do
             stack1 = towers.stacks[0].dup
-            stack2 = towers.stacks[1].dup
-            stack3 = towers.stacks[2].dup
+
 
             towers.move_disk
             expect(towers.stacks[0]).to_not eq(stack1)
-            expect(towers.stacks[1]).to_not eq(stack2)
-            expect(towers.stacks[2]).to_not eq(stack3)
+
         end
 
     end
