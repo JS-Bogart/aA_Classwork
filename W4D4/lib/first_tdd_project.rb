@@ -83,7 +83,7 @@ class HanoiTowers
         chosen_disk = stacks[chosen_stack].shift
         puts "Enter the stack number of the new stack you would like to place the disk"
         target_stack = gets.chomp.to_i
-        while target_stack == chosen_stack || stacks[target_stack] == nil
+        while target_stack == chosen_stack || stacks[target_stack] == nil || (chosen_disk > stacks[target_stack][0] if !stacks[target_stack].empty?)
             puts "Invalid stack chosen"
             puts "Enter the stack number of the new stack you would like to place the disk"
             target_stack = gets.chomp.to_i
@@ -96,8 +96,21 @@ class HanoiTowers
         (stacks[1] == (1..size).to_a) || (stacks[2] == (1..size).to_a)
     end
 
+    def render
+        stacks.each { |row| p row } 
+    end
+
+    def play
+        while !won?
+            render
+            move_disk
+        end
+        puts "Congrats! You won, buddy!"
+        puts "How about trying #{@size+1} disks next time?"
+    end
+
 end
 
 
 game = HanoiTowers.new(3)
-# game.play
+game.play
