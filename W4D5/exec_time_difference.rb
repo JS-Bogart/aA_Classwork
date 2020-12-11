@@ -32,21 +32,26 @@ end
 
 #time O(n), space O(1)
 def largest_contiguous_subsum2(arr)
-    debugger
     global = arr.first
-    cur = arr.first
-    arr.drop(1).each_with_index do |ele, idx|
-        if ele > cur && cur < 0
-            cur = ele
-        else
-            cur += ele
+
+    (0...arr.length).each do |i|  # O(n)
+        global = arr[i] if arr[i] > global #O(1)
+        cur = arr[i..-1].sum
+        global = cur if cur > global #O(1)
+        if i > 0        #0(1)
+            cur = arr[0..-i].sum
+            global = cur if cur > global #O(1)
         end
-        global = cur if cur > global
     end
+
     global
 end
 
-                  
-list = [2, 3, -6, 7, -6, 7]
+        
+list1 = [5, 3, -7]
+list2 = [2, 3, -6, 7, -6, 7]
+list3 = [-5, -1, -3]
 
-p largest_contiguous_subsum2(list)
+p largest_contiguous_subsum2(list1)
+p largest_contiguous_subsum2(list2)
+p largest_contiguous_subsum2(list3)
