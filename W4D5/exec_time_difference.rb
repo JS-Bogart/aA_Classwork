@@ -18,7 +18,7 @@ end
 # list = [ 0, 3, 5, 4, -5, 10, 1, 90 ]
 # p my_min2(list)
 
-
+#time O(n^2), space O(n^2)
 def largest_contiguous_subsum(arr)
     subset = []
     (0...arr.length).each do |i|
@@ -29,5 +29,16 @@ def largest_contiguous_subsum(arr)
     subset.map { |sub| sub.sum }.max
 end
 
-list = [5, 3, -7]
-p largest_contiguous_subsum(list)
+#time O(n), space O(1)
+def largest_contiguous_subsum2(arr)
+    largest = arr.first
+    cur = arr.first
+
+
+
+end
+
+                  
+list = [2, 3, -6, 7, -6, 7]
+
+p largest_contiguous_subsum2(list)
