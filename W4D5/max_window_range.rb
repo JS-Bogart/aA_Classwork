@@ -16,9 +16,7 @@ end
 # p windowed_max_range([1, 0, 2, 5, 4, 8], 4) # == 6 # 2, 5, 4, 8
 # p windowed_max_range([1, 3, 2, 5, 4, 8], 5)  #== 6 # 3, 2, 5, 4, 8
 
-
 class MyQueue
-
   def initialize
     @store = []
   end
@@ -45,7 +43,6 @@ class MyQueue
 end
 
 class MyStack
-
   def initialize
     @store = []
   end
@@ -69,30 +66,37 @@ class MyStack
   def push(ele)
     @store.push(ele)
   end
-
 end
 
 class StackQueue
-
   def initialize
-    @store = MyStack.new
-    # @s2 = MyStack.new
+    @in_stack = MyStack.new
+    @out_stack = MyStack.new
+  end
+
+  def transfer_out_to_in
+    @in_stack.push(@out_stack.pop) until @out_stack.empty?
+  end
+
+  def transfer_in_to_out
+    @out_stack.push(@in_stack.pop) until @in_stack.empty?
   end
 
   def enqueue(ele)
-    @store.push(ele)
-  end
-
-  def empty?
-    @store.empty?
-  end
-
-  def size
-    @store.size
+    transfer_out_to_in unless @out_stack.empty?
+    @in_stack.push(ele)
   end
 
   def dequeue
-    
+    transfer_in_to_out unless @in_stack.empty?
+    @out_stack.pop
   end
 
+  def empty?
+    @in_stack.empty? && @out_stack.empty?
+  end
+
+  def size
+    @in_stack.size + @out_stack.size
+  end
 end
