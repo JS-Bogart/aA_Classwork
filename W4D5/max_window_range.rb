@@ -43,3 +43,56 @@ class MyQueue
     @store.shift
   end
 end
+
+class MyStack
+
+  def initialize
+    @store = []
+  end
+
+  def peek
+    @store.last
+  end
+
+  def size
+    @store.length
+  end
+
+  def empty?
+    @store.empty?
+  end
+
+  def pop
+    @store.pop
+  end
+
+  def push(ele)
+    @store.push(ele)
+  end
+
+end
+
+class StackQueue
+
+  def initialize
+    @store = MyStack.new
+    # @s2 = MyStack.new
+  end
+
+  def enqueue(ele)
+    @store.push(ele)
+  end
+
+  def empty?
+    @store.empty?
+  end
+
+  def size
+    @store.size
+  end
+
+  def dequeue
+    
+  end
+
+end
