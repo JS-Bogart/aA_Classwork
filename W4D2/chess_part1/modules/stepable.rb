@@ -2,9 +2,9 @@ module Stepable
 
   def moves
     possible_moves = []
-      if self.is_a?(King)
-        curr_x, curr_y = pos
+      if symbol == :♚ || symbol == :♔
         move_diffs.each do |move|
+          curr_x, curr_y = pos
           curr_x += move.first
           curr_y += move.last
           new_pos = [curr_x, curr_y]
@@ -12,9 +12,9 @@ module Stepable
             possible_moves << move
           end
         end
-      elsif self.is_a?(Knight)
-        curr_x, curr_y = pos
+      elsif symbol == :♞ || symbol == :♘
         move_diffs.each do |move|
+          curr_x, curr_y = pos
           curr_x += move.first
           curr_y += move.last
           new_pos = [curr_x, curr_y]
