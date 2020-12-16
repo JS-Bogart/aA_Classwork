@@ -27,5 +27,16 @@ CREATE TABLE replies (
     parent_id INTEGER,
     author_id INTEGER NOT NULL,
     question_id INTEGER NOT NULL,
-    body TEXT NOT NULL
-)
+    body TEXT NOT NULL,
+    FOREIGN KEY (parent_id) references replies(id),
+    FOREIGN KEY (author_id) references users(id),
+    FOREIGN KEY (question_id) references questions(id)
+);
+
+CREATE TABLE question_likes (
+    id INTEGER PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    question_id INTEGER NOT NULL,
+    FOREIGN KEY (user_id) references users(id),
+    FOREIGN KEY (question_id) references questions(id)
+);
