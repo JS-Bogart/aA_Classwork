@@ -40,3 +40,33 @@ CREATE TABLE question_likes (
     FOREIGN KEY (user_id) references users(id),
     FOREIGN KEY (question_id) references questions(id)
 );
+
+INSERT INTO
+    users (fname, lname)
+VALUES
+    ("Sam", "Dubner"),
+    ("Jeffrey", "Bogart");
+
+INSERT INTO
+    questions (title, body, author_id)
+VALUES
+    ("hello", "world", (SELECT id FROM users WHERE fname = "Sam")),
+    ("how do you exit vim", "I am lost", (SELECT id FROM users WHERE fname = "Jeffrey"));
+
+INSERT INTO
+    question_follows (user_id, question_id)
+VALUES
+    ((SELECT id FROM users WHERE fname = "Sam"), (SELECT id FROM questions WHERE title = "hello")),
+    ((SELECT id FROM users WHERE fname = "Jeffrey"), (SELECT id FROM questions WHERE title = "how do you exit vim"));
+
+INSERT INTO
+    replies (parent_id, author_id, question_id, body)
+VALUES
+    (NULL, (SELECT id FROM users WHERE fname = "Sam"), (SELECT id FROM questions WHERE title = "hello"), "goodbye, world"),
+    (NULL, (SELECT id FROM users WHERE fname = "Jeffrey"), (SELECT id FROM questions WHERE title = "how do you exit vim"), ":q");
+
+INSERT INTO
+    question_likes (user_id, question_id)
+VALUES
+    ((SELECT id FROM users WHERE fname = "Sam"), (SELECT id FROM questions WHERE title = "how do you exit vim")),
+    ((SELECT id FROM users WHERE fname = "Jeffrey"), (SELECT id FROM questions WHERE title = "hello"));
