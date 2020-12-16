@@ -4,8 +4,6 @@ body {
   /* If the user cannot load the Arial font, the sans-serif font is used */
   font-family: Arial, sans-serif;
   background-color: #FEFFF1;
-  width: 900px;
-  margin: 0 auto;
 }
 
 h1 {
@@ -74,36 +72,53 @@ h2 + .user_review {
     border-top: 1px solid black;
 }
 
+header {
+  display: flex;
+}
+
+header img {
+  align-self: flex-start;
+}
+
 nav {
-  display: inline-block;
+  display: flex;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
 }
 
 nav ul li {
-  display: inline-block;
-}
-
-nav ul li a {
   padding: 20px;
-  display: block;
+  align-items: flex-end;
 }
 
 body {
   margin: 0 auto;
   width: 900px;
+  display: flex;
+  flex-direction: column;
 }
 
 body aside {
   width: 180px;
   margin-right: 15px;
-  display: inline-block;
+  justify-self: flex-start;
+  align-self: flex-start;
 }
 
 section {
   width: 700px;
-  display: inline-block;
+  display: flex;
   vertical-align: top;
+  align-self: center;
+  flex-direction: column;
 }
 
+#reviews {
+  align-self: flex-end;
+}
 
 .ingredients-list li {
   margin: 15px 0px;
