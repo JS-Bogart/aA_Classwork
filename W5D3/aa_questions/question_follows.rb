@@ -55,4 +55,18 @@ class QuestionFollow
         response.map { |data| Question.new(data) }
     end
 
+    def self.most_followed_questions(n)
+        response = QuestionsDatabase.instance.execute(<<-SQL, n)
+            SELECT
+                questions.id, questions.title, questions.body, questions.author_id
+            FROM
+                question_follows
+            JOIN
+                users ON users.id = question_follows.user_id
+            JOIN
+                questions ON questions.id = question_follows.question_id
+            WHERE
+                
+        SQL
+    end
 end

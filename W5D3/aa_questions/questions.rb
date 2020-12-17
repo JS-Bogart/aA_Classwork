@@ -2,6 +2,7 @@ require "sqlite3"
 require_relative "questions_db.rb"
 require_relative "users.rb"
 require_relative "replies.rb"
+require_relative "question_follows.rb"
 
 class Question 
     attr_accessor :title, :body
@@ -53,4 +54,7 @@ class Question
         Reply.find_by_question_id(@id)
     end
 
+    def followers
+        QuestionFollow.followers_for_question_id(@id)
+    end
 end
