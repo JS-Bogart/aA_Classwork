@@ -1,6 +1,6 @@
 require "sqlite3"
 require_relative "questions_db.rb"
-require_relative "user.rb"
+require_relative "users.rb"
 require_relative "questions.rb"
 
 class QuestionFollow

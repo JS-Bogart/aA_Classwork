@@ -1,6 +1,7 @@
 require "sqlite3"
 require_relative "questions_db.rb"
-require_relative "user.rb"
+require_relative "users.rb"
+require_relative "replies.rb"
 
 class Question 
     attr_accessor :title, :body
@@ -32,7 +33,8 @@ class Question
             WHERE
                 author_id = ?
         SQL
-        Question.new(response[0])
+        # Question.new(response[0])
+        response.map { |data| Question.new(data) }
     end
 
     def author
@@ -46,4 +48,9 @@ class Question
         SQL
         User.new(response[0])
     end
+
+    def replies
+        Reply.find_by_question_id(@id)
+    end
+
 end

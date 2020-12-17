@@ -1,6 +1,6 @@
 require "sqlite3"
 require_relative "questions_db.rb"
-require_relative "user.rb"
+require_relative "users.rb"
 require_relative "questions.rb"
 
 class Reply
@@ -22,6 +22,30 @@ class Reply
                 replies
             WHERE
                 id = ?
+        SQL
+        Reply.new(response[0])
+    end
+
+    def self.find_by_user_id(user_id)
+        response = QuestionsDatabase.instance.execute(<<-SQL, user_id)
+            SELECT
+                *
+            FROM
+                replies
+            WHERE
+                user_id = ?
+        SQL
+        Reply.new(response[0])
+    end
+
+    def self.find_by_question_id(question_id)
+        response = QuestionsDatabase.instance.execute(<<-SQL, question_id)
+            SELECT
+                *
+            FROM
+                replies
+            WHERE
+                question_id = ?
         SQL
         Reply.new(response[0])
     end

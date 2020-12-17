@@ -1,13 +1,13 @@
 require 'sqlite3'
 require_relative 'questions_db.rb'
 
-class User
-    attr_accessor :fname, :lname
-    
+class QuestionLike
+    attr_reader :id, :user_id, :question_id
+
     def initialize(hash)
         @id = hash['id']
-        @fname = hash['fname']
-        @lname = hash['lname']
+        @user_id = hash['user_id']
+        @question_id = hash['question_id']
     end
 
     def self.find_by_id(id)
@@ -15,11 +15,11 @@ class User
             SELECT
                 *
             FROM
-                users
+                question_likes
             WHERE
                 id = ?
         SQL
-        User.new(response[0])
+        QuestionLike.new(response[0])
     end
 
 end
