@@ -22,4 +22,37 @@ class QuestionFollow
         SQL
         QuestionFollow.new(response[0])
     end
+
+    def self.followers_for_question_id(question_id)
+        response = QuestionsDatabase.instance.execute(<<-SQL, question_id)
+            SELECT
+                users.id, users.fname, users.lname
+            FROM
+                question_follows
+            JOIN
+                users ON users.id = question_follows.user_id
+            JOIN
+                questions ON questions.id = question_follows.question_id
+            WHERE
+                questions.id = ?
+        SQL
+        response.map { |data| User.new(data) }
+    end
+
+    def self.followed_questions_for_user_id(user_id)
+        response = QuestionsDatabase.instance.execute(<<-SQL, user_id)
+            SELECT DISTINCT
+                questions.id, questions.title, questions.body, questions.author_id
+            FROM
+                question_follows
+            JOIN
+                users ON users.id = question_follows.user_id
+            JOIN
+                questions ON questions.id = question_follows.question_id
+            WHERE
+                users.id = ?
+        SQL
+        response.map { |data| Question.new(data) }
+    end
+
 end

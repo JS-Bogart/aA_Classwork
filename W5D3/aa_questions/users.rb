@@ -1,6 +1,7 @@
 require 'sqlite3'
 require_relative 'questions_db.rb'
 require_relative 'questions.rb'
+require_relative 'question_follows.rb'
 
 class User
     attr_accessor :fname, :lname
@@ -41,6 +42,10 @@ class User
 
     def authored_replies
         Reply.find_by_user_id(@id)
+    end
+
+    def followed_questions
+        QuestionFollow.followed_questions_for_user_id(@id)
     end
 
 end
