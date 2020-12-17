@@ -33,9 +33,10 @@ class Reply
             FROM
                 replies
             WHERE
-                user_id = ?
+                author_id = ?
         SQL
-        Reply.new(response[0])
+        # Reply.new(response[0])
+        response.map { |data| Reply.new(data) }
     end
 
     def self.find_by_question_id(question_id)
@@ -47,6 +48,41 @@ class Reply
             WHERE
                 question_id = ?
         SQL
-        Reply.new(response[0])
+        # Reply.new(response[0])
+        response.map { |data| Reply.new(data) }
+    end
+
+    def author 
+        User.find_by_id(@author_id)
+    end
+
+    def question
+        Question.find_by_id(@question_id)
+    end
+
+    def parent_reply
+        unless @parent_id.nil?
+            response = QuestionsDatabase.instance.execute(<<-SQL, @parent_id)
+                SELECT
+                    *
+                FROM
+                    replies
+                WHERE
+                    id = ?
+            SQL
+            Reply.new(response[0])
+        end
+    end
+
+    def child_replies
+        response = QuestionsDatabase.instance.execute(<<-SQL, @id)
+            SELECT
+                *
+            FROM
+                replies
+            WHERE
+                parent_id = ?
+        SQL
+        response.map { |data| Reply.new(data) }
     end
 end
