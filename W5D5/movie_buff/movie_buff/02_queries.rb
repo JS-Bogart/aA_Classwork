@@ -12,7 +12,7 @@ def bad_years
   Movie
   .select(:yr)
   .group(:yr)
-  .having('COUNT(movies.score <= 8) = 0')
+  .having('MAX(score) <= 8')
   .pluck(:yr)
 end
 
