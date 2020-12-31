@@ -6,7 +6,8 @@ class Artwork < ApplicationRecord
     belongs_to :artist,
         class_name: :User,
         foreign_key: :artist_id,
-        primary_key: :id
+        primary_key: :id,
+        dependent: :destroy
 
     has_many :artwork_shares,
         class_name: :ArtworkShare,
