@@ -1,0 +1,14 @@
+<h1>Index Page of All Cats</h1>
+
+<ul>
+    <% Cat.all.each do |cat| %>
+    <h2><%= cat.name %></h2>
+    <br>
+    <li><%= cat.id %></li>
+    <li><%= cat.color %></li>
+    <li><%= cat.sex %></li>
+    <li><%= cat.age %></li>
+    <li><%= cat.description %></li>
+    <br>
+    <% end %>
+</ul>

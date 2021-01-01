@@ -1,0 +1,31 @@
+<h1>Add cat to database</h1>
+
+<form action="/cats" method="post">
+
+    <label for="name">Name</label>
+        <input id="name" type="text" name="cat[name]">
+    <br>
+    <label for="sex">Sex</label>
+        <select id="sex" name="cat[sex]">
+            <option disabled selected>-- Please Select --</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+    <br>
+    <label for="color">Color</label>
+        <select id="color" name="cat[color]">
+            <option disabled selected>-- Please Select Color --</option>
+            <option value="black">Black</option>
+            <option value="brown">Brown</option>
+            <option value="white">White</option>
+            <option value="orange">Orange</option>
+            <option value="calico">Calico</option>
+        </select>
+    <br>
+    <label for="birth_date">Birth Date</label>
+        <input id="birth_date" type="date" name="cat[birth_date]">
+    <br>
+    <label for="description">Description</label>
+        <textarea name="cat[description]"></textarea>
+        <input type="submit" value="Add cat to database">
+</form>
