@@ -1,16 +1,17 @@
 <h1>Add cat to database</h1>
 
-<form action="/cats" method="post">
+<%= render 'form', cat: @cat, action: :new %>
+
+<!-- <form action="/cats" method="post">
 
     <label for="name">Name</label>
         <input id="name" type="text" name="cat[name]">
     <br>
     <label for="sex">Sex</label>
-        <select id="sex" name="cat[sex]">
-            <option disabled selected>-- Please Select --</option>
-            <option value="M">Male</option>
-            <option value="F">Female</option>
-        </select>
+        <input type="radio" id="male" name="cat[sex]" value="M" checked> 
+            <label for="male">Male</label>
+        <input type="radio" id="female" name="cat[sex]" value="F">
+            <label for="female">Female</label>
     <br>
     <label for="color">Color</label>
         <select id="color" name="cat[color]">
@@ -28,4 +29,4 @@
     <label for="description">Description</label>
         <textarea name="cat[description]"></textarea>
         <input type="submit" value="Add cat to database">
-</form>
+</form> -->
