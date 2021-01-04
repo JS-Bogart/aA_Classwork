@@ -2281,3 +2281,194 @@ Migrating to AddStartAndEndDates (20210104071954)
   ↳ bin/rails:9
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/cat_rental_requests/new" for ::1 at 2021-01-04 00:10:46 -0800
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/scottbogart/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+
+ActionController::RoutingError - uninitialized constant CatRentalRequestsController:
+
+Started POST "/__better_errors/83ab74392b9eb6e9/variables" for ::1 at 2021-01-04 00:10:47 -0800
+Started GET "/cat_rental_request/new" for ::1 at 2021-01-04 00:12:55 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/cat_rental_request/new"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cat_rental_requests/new" for ::1 at 2021-01-04 00:13:55 -0800
+
+ActionController::RoutingError - uninitialized constant CatRentalRequestsController:
+
+Started POST "/__better_errors/35c0ab9f03949ab2/variables" for ::1 at 2021-01-04 00:13:55 -0800
+Started GET "/cat_rental_requests/new" for ::1 at 2021-01-04 00:17:10 -0800
+
+ActionController::RoutingError - uninitialized constant CatRentalRequestsController:
+
+Started POST "/__better_errors/75ded30ebea34eb3/variables" for ::1 at 2021-01-04 00:17:11 -0800
+Started GET "/cat_rental_requests/new" for ::1 at 2021-01-04 00:17:13 -0800
+
+ActionController::RoutingError - uninitialized constant CatRentalRequestsController:
+
+Started POST "/__better_errors/6ffc770e63d0718b/variables" for ::1 at 2021-01-04 00:17:13 -0800
+Started GET "/cat_rental_requests/new" for ::1 at 2021-01-04 00:20:05 -0800
+
+ActionController::RoutingError - uninitialized constant CatRentalRequestsController:
+
+Started POST "/__better_errors/32149ff235a95cf8/variables" for ::1 at 2021-01-04 00:20:06 -0800
+Started GET "/cat_rental_requests/new" for ::1 at 2021-01-04 00:20:36 -0800
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/scottbogart/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+
+ActionController::RoutingError - uninitialized constant CatRentalRequestsController:
+
+Started POST "/__better_errors/54e82fc54a98d0b4/variables" for ::1 at 2021-01-04 00:20:36 -0800
+Started GET "/cat_rental_requests/new" for ::1 at 2021-01-04 00:20:38 -0800
+
+ActionController::RoutingError - uninitialized constant CatRentalRequestsController:
+
+Started POST "/__better_errors/5008a2bf775adba9/variables" for ::1 at 2021-01-04 00:20:38 -0800
+Started GET "/cat_rental_requests" for ::1 at 2021-01-04 00:20:45 -0800
+
+ActionController::RoutingError - uninitialized constant CatRentalRequestsController:
+
+Started POST "/__better_errors/0f354e47c18e9e58/variables" for ::1 at 2021-01-04 00:20:45 -0800
+Started GET "/cat_rental_requests/new" for ::1 at 2021-01-04 00:20:51 -0800
+
+ActionController::RoutingError - uninitialized constant CatRentalRequestsController:
+
+Started POST "/__better_errors/84b15e15869daa44/variables" for ::1 at 2021-01-04 00:20:52 -0800
+Started GET "/cat_rental_requests/new" for ::1 at 2021-01-04 00:21:36 -0800
+Processing by CatRentalRequestsController#new as HTML
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+
+ArgumentError - You need to supply at least one validation:
+  app/models/cat_rental_request.rb:7:in `<class:CatRentalRequest>'
+  app/models/cat_rental_request.rb:2:in `<top (required)>'
+  app/controllers/cat_rental_requests_controller.rb:4:in `new'
+
+Started POST "/__better_errors/f204099218a6f373/variables" for ::1 at 2021-01-04 00:21:37 -0800
+Started POST "/__better_errors/f204099218a6f373/variables" for ::1 at 2021-01-04 00:21:56 -0800
+Started POST "/__better_errors/f204099218a6f373/variables" for ::1 at 2021-01-04 00:22:09 -0800
+Started GET "/cat_rental_requests/new" for ::1 at 2021-01-04 00:22:52 -0800
+Processing by CatRentalRequestsController#new as HTML
+  Rendering cat_rental_requests/new.html.erb within layouts/application
+  [1m[36mCat Load (4.8ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cat_rental_requests/new.html.erb:7
+  Rendered cat_rental_requests/new.html.erb within layouts/application (46.2ms)
+Completed 200 OK in 1252ms (Views: 656.5ms | ActiveRecord: 475.4ms)
+
+
+Started GET "/cat_rental_requests/new" for ::1 at 2021-01-04 00:25:51 -0800
+Processing by CatRentalRequestsController#new as HTML
+  Rendering cat_rental_requests/new.html.erb within layouts/application
+  [1m[36mCat Load (1.1ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cat_rental_requests/new.html.erb:7
+  Rendered cat_rental_requests/new.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 165ms (Views: 151.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/cats" for ::1 at 2021-01-04 00:33:16 -0800
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (1.7ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:4
+  Rendered cats/index.html.erb within layouts/application (57.2ms)
+Completed 200 OK in 188ms (Views: 151.0ms | ActiveRecord: 23.6ms)
+
+
+Started GET "/cats/11" for ::1 at 2021-01-04 00:33:24 -0800
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCat Load (4.5ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:9
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (32.0ms)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 114.7ms)
+
+
+
+NoMethodError - undefined method `rental_requests' for #<Cat:0x00007fc572c99778>:
+  app/views/cats/show.html.erb:27:in `_app_views_cats_show_html_erb__2713644938419092048_70243005521740'
+  app/controllers/cats_controller.rb:12:in `show'
+
+Started POST "/__better_errors/5732b21dd11f8bfe/variables" for ::1 at 2021-01-04 00:33:25 -0800
+Started GET "/cats/11" for ::1 at 2021-01-04 00:34:28 -0800
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCat Load (0.7ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:9
+  Rendering cats/show.html.erb within layouts/application
+  [1m[36mCat Load (12.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats" WHERE "cats"."cat_id" = $1 ORDER BY start_date[0m  [["cat_id", 11]]
+  ↳ app/views/cats/show.html.erb:27
+  Rendered cats/show.html.erb within layouts/application (46.9ms)
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 25.5ms)
+
+
+
+ActiveRecord::StatementInvalid - PG::UndefinedColumn: ERROR:  column cats.cat_id does not exist
+LINE 1: SELECT "cats".* FROM "cats" WHERE "cats"."cat_id" = $1 ORDER...
+                                          ^
+: SELECT "cats".* FROM "cats" WHERE "cats"."cat_id" = $1 ORDER BY start_date:
+  app/views/cats/show.html.erb:27:in `_app_views_cats_show_html_erb__2713644938419092048_70243039085120'
+  app/controllers/cats_controller.rb:12:in `show'
+
+Started POST "/__better_errors/52c2db7631ecb5a2/variables" for ::1 at 2021-01-04 00:34:29 -0800
+Started GET "/cats/11" for ::1 at 2021-01-04 00:37:17 -0800
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCat Load (1.2ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:9
+  Rendering cats/show.html.erb within layouts/application
+  [1m[36mCat Load (7.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats" WHERE "cats"."cat_id" = $1 ORDER BY start_date[0m  [["cat_id", 11]]
+  ↳ app/views/cats/show.html.erb:27
+  Rendered cats/show.html.erb within layouts/application (21.2ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 8.7ms)
+
+
+
+ActiveRecord::StatementInvalid - PG::UndefinedColumn: ERROR:  column cats.cat_id does not exist
+LINE 1: SELECT "cats".* FROM "cats" WHERE "cats"."cat_id" = $1 ORDER...
+                                          ^
+: SELECT "cats".* FROM "cats" WHERE "cats"."cat_id" = $1 ORDER BY start_date:
+  app/views/cats/show.html.erb:27:in `_app_views_cats_show_html_erb__2713644938419092048_70243022770180'
+  app/controllers/cats_controller.rb:12:in `show'
+
+Started POST "/__better_errors/8699a5579319fa21/variables" for ::1 at 2021-01-04 00:37:17 -0800
+Started GET "/cats/11" for ::1 at 2021-01-04 00:38:13 -0800
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:9
+  Rendering cats/show.html.erb within layouts/application
+  [1m[36mCatRentalRequest Load (15.0ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1 ORDER BY start_date[0m  [["cat_id", 11]]
+  ↳ app/views/cats/show.html.erb:27
+  Rendered cats/show.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 139ms (Views: 91.6ms | ActiveRecord: 27.0ms)
+
+

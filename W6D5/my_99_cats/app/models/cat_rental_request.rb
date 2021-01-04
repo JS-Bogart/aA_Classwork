@@ -4,7 +4,7 @@ class CatRentalRequest < ApplicationRecord
     
     validates :status, :start_date, :end_date, presence: true
     validates :cat_id, presence: true, uniqueness: true
-    validates :does_not_overlap_approved_request
+    # validates :does_not_overlap_approved_request
 
     belongs_to :cat,
         class_name: :Cat,
