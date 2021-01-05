@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-    helper_method :current_user
 
     def new
         @user = User.new
@@ -17,7 +16,8 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        session = 
+        logout
+        redirect_to new_session_url
     end
 
 end
