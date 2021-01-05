@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
             params[:user][:password]
         )
 
-        @user.reset_session_token!
+        log_in_user!(@user)
+        # @user.reset_session_token!
         redirect_to user_url(@user)
     end
 
