@@ -1,2 +1,7 @@
 <li><%= @user.email %></li>
 <li><a href="<%= users_url %>">Return to all users</a></li>
+<form action="<%= session_url(@user) %>%" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Log Out">
+
+</form>
