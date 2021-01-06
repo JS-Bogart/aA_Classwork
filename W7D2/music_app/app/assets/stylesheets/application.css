@@ -62,7 +62,7 @@ table {
 header {
     font-family: cursive;
     display: flex;
-    justify-content: center;
+	justify-content: center;
 }
 
 h1 {
