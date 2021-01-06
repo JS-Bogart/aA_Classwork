@@ -85,7 +85,18 @@ h1 {
     flex-direction: column;
 }
 
-.sign_links {
-    display: flex;
-    justify-content: space-between;
+.sign_button {
+	margin: 5px;
+	background-color: yellow;
+	border-radius: 50px;
+	/* border: 1px solid black; */
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+h2 {
+	font-size: 25px;
 }

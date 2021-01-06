@@ -1,16 +1,22 @@
-<h1>Create Account</h1>
-<form action="<%= users_url %>" method="POST">
-    <label>Email: 
-        <input type="text" name="user[email]" value="" >
-    </label>
+<div class="login">
+
+    <h2>Create Account</h2>
 
     <br>
 
-    <label>Password: 
-        <input type="password" name="user[password]" value="" >
-    </label>
+    <form action="<%= users_url %>" method="POST">
+        <label>Email: 
+            <input type="text" name="user[email]" value="" >
+        </label>
 
-    <br>
+        <br>
 
-    <input type="submit" value="Create Account" >
-</form>
+        <label>Password: 
+            <input type="password" name="user[password]" value="" >
+        </label>
+
+        <br>
+
+        <input type="submit" value="Create Account" >
+    </form>
+</div>
