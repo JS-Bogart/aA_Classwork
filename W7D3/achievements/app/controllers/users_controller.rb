@@ -14,4 +14,17 @@ class UsersController < ApplicationController
         end
     end
 
+    def new
+        @user = User.new
+        render :new
+    end
+
+    def create
+        @user = User.create(username: 'Erik', password: '123456', session_token: '1231231adsdada')
+        if @user.save
+            render :show
+        else
+            render :new
+        end
+    end
 end
