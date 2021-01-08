@@ -16,8 +16,14 @@
 # 2. 1 step + 2 steps
 # 3. 2 steps + 1 step
 
+def steps(num)
+    return num if num < 3
+    return steps(num-1) + steps(num-2)
+end
 
-
+p steps(2)
+p steps(3)
+p steps(4)
 
 # 2) 
 # Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
