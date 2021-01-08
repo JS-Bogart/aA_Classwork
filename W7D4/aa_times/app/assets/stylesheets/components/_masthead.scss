@@ -2,8 +2,10 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	flex-basis: 100%;
 	border-bottom: 2px solid black;
 	position: relative;
+	// border: 2px solid blue;
 }
 
 .language-nav {
@@ -27,6 +29,14 @@
 	ul {
 		display: flex;
 	}
+
+	li:first-child {
+		font-weight: bold;
+	}
+
+	li:hover {
+		text-decoration: underline solid black;
+	}
 }
 
 .logo {
@@ -41,8 +51,15 @@
 	margin-top: 10px;
 	margin-bottom: 10px;
 
+	ul {
+		display: flex;
+	}
+
 	li {
 		margin-left: 10px;
+	}
+
+	li:not(:last-child) {
 		border-right: 1px solid $light-gray;
 	}
 
@@ -55,7 +72,11 @@
 	}
 
 	button:hover {
-		background-color: $lightest-gray;
+		background-color: $light-gray;
+	}
+
+	a:hover {
+		text-decoration: underline solid black;
 	}
 
 	a,
