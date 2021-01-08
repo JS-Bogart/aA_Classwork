@@ -1,0 +1,25 @@
+.sections-nav {
+    display: flex;
+    justify-content: center;
+    flex-basis: 100%;
+    border-bottom: 1px solid $gray;
+    // border: 2px solid black;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        font-family: $sans-serif;
+    }
+
+    li {
+        margin: 10px;
+    }
+
+    li:not(:last-child):hover {
+        background-color: $light-gray;
+    }
+
+    li:last-child:hover {
+        text-decoration: underline solid black;
+    }
+}
