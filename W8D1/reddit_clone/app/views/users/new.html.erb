@@ -1,0 +1,14 @@
+<h1>Create Account</h1>
+
+<body>
+    <form action="<%= users_url%>" method= "POST"> 
+        <label> Username: 
+            <input type="text" name="user[username]" value ="<%= @user.username%>">
+        </label>
+        <label> Password: 
+            <input type="text" name="user[password]" value ="<%= @user.password%>">
+        </label>
+
+        <button type="submit">Create Account</button>
+    </form>
+</body>
