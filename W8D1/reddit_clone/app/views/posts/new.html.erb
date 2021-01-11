@@ -1,6 +1,6 @@
 <header><h1>New Post</h1></header>
 
-<form action="<%= sub_posts_url(@sub) %>" method="post">
+<form action="<%= sub_posts_url %>" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <label>Title:
         <input type="text" name="post[title]" value="<%= @post.title %>">
@@ -14,5 +14,6 @@
         <input type="text" name="post[content]" value="<%= @post.content %>">
     </label>
     <br>
+    
     <input type="submit" value="Submit">
 </form>
