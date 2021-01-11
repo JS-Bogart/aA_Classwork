@@ -1,4 +1,5 @@
 class SubsController < ApplicationController
+before_action :require_signed_in, only: [:edit, :update]
 
     def index
         @subs = Sub.all
