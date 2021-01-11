@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+    before_action :require_signed_in, only: [:show]
     def new
         @user = User.new
         render :new
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
         if @user.save
             sign_in(@user)
-            redirect_to users_url
+            redirect_to user_url(@user)
         else
             flash.now[:errors] = @users.errors.full_messages
             render :new
@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     end
 
     def show
+        @user = User.find_by(id: params[:id])
         render :show
     end
 
