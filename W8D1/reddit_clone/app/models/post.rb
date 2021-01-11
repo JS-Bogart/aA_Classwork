@@ -8,10 +8,11 @@ class Post < ApplicationRecord
 
     has_many :post_subs,
         foreign_key: :post_id,
-        class_name: :post_subs
+        class_name: :PostSub,
+        inverse_of: :post
 
     has_many :subs,
         through: :post_subs,
-        source: :subs
+        source: :sub
 
 end

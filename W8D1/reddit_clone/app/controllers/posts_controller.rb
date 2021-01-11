@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
     def update
         @post = Post.find_by(id: params[:id])
-        @post.sub_id = params[:sub_id]
+        # @post.sub_id = params[:sub_id]
         if @post.update(post_params)
             redirect_to post_url(@post)
         else
@@ -46,6 +46,6 @@ class PostsController < ApplicationController
 
     private
     def post_params
-        params.require(:post).permit(:title, :url, :content)
+        params.require(:post).permit(:title, :url, :content, sub_ids: [])
     end
 end
