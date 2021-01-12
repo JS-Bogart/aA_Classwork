@@ -1991,3 +1991,20 @@ Started GET "/assets/application.self-90d04a84da624ec7988ae153cd2df64a639680c1c2
 Started GET "/assets/application.self-90d04a84da624ec7988ae153cd2df64a639680c1c2406005ab9d265a277420e0.css?body=1&livereload=1610137255688" for ::1 at 2021-01-08 12:20:55 -0800
 Started GET "/assets/application.self-90d04a84da624ec7988ae153cd2df64a639680c1c2406005ab9d265a277420e0.css?body=1&livereload=1610137260200" for ::1 at 2021-01-08 12:21:00 -0800
 Started GET "/assets/application.self-90d04a84da624ec7988ae153cd2df64a639680c1c2406005ab9d265a277420e0.css?body=1&livereload=1610137260202" for ::1 at 2021-01-08 12:21:00 -0800
+Started GET "/" for ::1 at 2021-01-08 12:31:55 -0800
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/scottbogart/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/railtie.rb:113)
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_gear_dropdown.html.erb (0.5ms)
+  Rendered shared/_main_nav.html.erb (8.5ms)
+  Rendered shared/_masthead.html.erb (0.6ms)
+  Rendered shared/_sections_nav.html.erb (0.6ms)
+  Rendered shared/_search_modal.html.erb (0.3ms)
+  Rendered shared/_main_content.html.erb (0.6ms)
+  Rendered static_pages/index.html.erb within layouts/application (53.7ms)
+Completed 200 OK in 995ms (Views: 986.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-97dd100733ad091616e661359a6272687ed9bf8ff2d9e11892996dc8d1579741.css?body=1" for ::1 at 2021-01-08 12:31:57 -0800
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2021-01-08 12:31:57 -0800
+Started GET "/assets/new_office.jpg" for ::1 at 2021-01-08 12:31:57 -0800
