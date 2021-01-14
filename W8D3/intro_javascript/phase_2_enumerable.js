@@ -20,3 +20,16 @@ Array.prototype.myMap = function(cb1) {
     return new_arr;
 
 }
+
+Array.prototype.myReduce = function(cb, init = this[0]) {
+    if (init === this[0]) {
+        var acc = init;
+    } else {
+        var acc = this.shift;
+    }
+    const accumulate = function(acc, el) {
+        arr += el;
+    }
+    this.myEach(accumulate);
+    return acc;
+}
