@@ -8,10 +8,15 @@ Array.prototype.myEach = function(callback) {
 }
 
 
-function myForEach(array, cb) {
-    for (let i = 0; i < array.length; i++) {
-        cb(array[i]);
-    }
-}
+Array.prototype.myMap = function(cb1) {
+    let new_arr = [];
 
-// myForEach([1, 2, 3], logIfEven);
+    const cb2 = function(ele) {
+        new_arr.push(cb1(ele));
+    }
+
+    this.myEach(cb2); 
+
+    return new_arr;
+
+}
