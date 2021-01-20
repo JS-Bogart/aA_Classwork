@@ -5,7 +5,9 @@ class View {
 
   makeMove($square) {}
 
-  setupBoard() {}
+  setupBoard() {
+    $()
+  }
 }
 
 module.exports = View;
