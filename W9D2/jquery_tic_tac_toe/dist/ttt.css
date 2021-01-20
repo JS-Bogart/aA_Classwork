@@ -39,3 +39,11 @@ ul.board > li.placeMoveO {
     font-size: 200px;
     color: blue;
 }
+
+ul.board > li.win {
+    background-color: green;
+    text-align: center;
+    color: purple;
+    font-size: 100px;
+    word-wrap: break-word;
+}

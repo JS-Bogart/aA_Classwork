@@ -23,7 +23,13 @@ class View {
     } else {
       $square.toggleClass('placeMoveO');
     }
-    
+    if (this.game.winner()) {
+      let $squares = $(".board li");
+      $squares.removeClass('placeMoveX');
+      $squares.removeClass('placeMoveO');
+      $squares.text(`${symbol} IS THE WINNER!!!`);
+      $squares.toggleClass('win');
+    }
   }
 
   setupBoard() {
