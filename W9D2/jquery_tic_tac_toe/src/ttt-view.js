@@ -9,19 +9,16 @@ class View {
     let $board = $(".board");
     $board.on("click", "li", (e) => {
       // debugger
-      this.game.playMove($(e.target).data('pos'));
       this.makeMove($(e.target))
     });
   }
-
+  
   makeMove($square) {
-    $square.toggleClass('placeMove')
-
-    // const $board = $(".board");
-    // $board.on('click','li', (e) => {
-    //   $(e.target).toggleClass('placeMove');
-    // })
-    
+    let symbol = this.game.currentPlayer;
+    this.game.playMove($square.data('pos'));
+    $square.text(symbol);
+    $square.toggleClass('placeMove');
+    // debugger
   }
 
   setupBoard() {
