@@ -21,3 +21,8 @@ ul.board > li {
 ul.board > li:hover {
     background-color: yellow;
 }
+
+ul.board > li.placeMove {
+    background-color: white;
+
+}

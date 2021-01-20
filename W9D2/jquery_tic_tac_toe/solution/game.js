@@ -11,7 +11,7 @@ class Game {
     return this.board.isOver();
   }
 
-  playMove(pos) {
+  playMove(pos) { //[0,0]
     this.board.placeMark(pos, this.currentPlayer);
     this.swapTurn();
   }
