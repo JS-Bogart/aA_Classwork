@@ -1,0 +1,12 @@
+ul.board {
+    display: flex;
+    /* flex-wrap: wrap; */
+    height: 600px;
+    width: 600px;
+    border: 1px solid black;
+}
+
+ul.board > li {
+    list-style-type: none;
+    border: 1px solid gray;
+}
