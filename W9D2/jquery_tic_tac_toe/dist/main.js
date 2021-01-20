@@ -45,7 +45,7 @@ eval("\nconst MoveError = function (msg) { this.msg = msg; };\n\n// MoveError re
   \*************************/
 /***/ ((module) => {
 
-eval("class View {\n  constructor(game, $el) {}\n\n  bindEvents() {}\n\n  makeMove($square) {}\n\n  setupBoard() {\n    $()\n  }\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
+eval("class View {\n  constructor(game, $el) {\n    this.game = game;\n    this.$el = $el;\n    \n  }\n\n  bindEvents() {}\n\n  makeMove($square) {}\n\n  setupBoard() {\n    \n  }\n}\n\nmodule.exports = View;\n\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
 
 /***/ })
 
@@ -79,7 +79,7 @@ eval("class View {\n  constructor(game, $el) {}\n\n  bindEvents() {}\n\n  makeMo
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-eval("const View = __webpack_require__(/*! ./ttt-view */ \"./src/ttt-view.js\");\nconst Game = __webpack_require__(/*! ../solution/game */ \"./solution/game.js\");\n\n  $(() => {\n    // Your code here\n    new Game();\n  });\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const View = __webpack_require__(/*! ./ttt-view */ \"./src/ttt-view.js\");\nconst Game = __webpack_require__(/*! ../solution/game */ \"./solution/game.js\");\n\n  $(() => {\n    // Your code here\n    let game = new Game();\n    new View(game, $(\".ttt\"));\n    \n  });\n\n\n//# sourceURL=webpack:///./src/index.js?");
 })();
 
 /******/ })()

@@ -1,12 +1,23 @@
 ul.board {
     display: flex;
-    /* flex-wrap: wrap; */
-    height: 600px;
-    width: 600px;
+    flex-wrap: wrap;
+    height: 606px;
+    width: 606px;
     border: 1px solid black;
+    padding: 0px;
+    margin: 0px;
 }
 
 ul.board > li {
     list-style-type: none;
-    border: 1px solid gray;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    padding: 0px;
+    margin: 0px;
+    background-color: gray;
+}
+
+ul.board > li:hover {
+    background-color: yellow;
 }
