@@ -17,8 +17,13 @@ class View {
     let symbol = this.game.currentPlayer;
     this.game.playMove($square.data('pos'));
     $square.text(symbol);
-    $square.toggleClass('placeMove');
-    // debugger
+
+    if (symbol === 'x') {
+      $square.toggleClass('placeMoveX');
+    } else {
+      $square.toggleClass('placeMoveO');
+    }
+    
   }
 
   setupBoard() {

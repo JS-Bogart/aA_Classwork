@@ -24,7 +24,18 @@ ul.board > li:hover {
     background-color: yellow;
 }
 
-ul.board > li.placeMove {
+ul.board > li.placeMoveX {
     background-color: white;
-    
+    line-height: 150px;
+    text-align: center;
+    font-size: 200px;
+    color: red;
+}
+
+ul.board > li.placeMoveO {
+    background-color: white;
+    line-height: 150px;
+    text-align: center;
+    font-size: 200px;
+    color: blue;
 }
