@@ -10,7 +10,6 @@ Function.prototype.curry = function (numArgs) {
             return _curriedArgs;
         }
     }
-
 }
 
 Function.prototype.curry = function (numArgs) {
@@ -25,5 +24,4 @@ Function.prototype.curry = function (numArgs) {
             return _curriedArgs;
         }
     }
-
 }

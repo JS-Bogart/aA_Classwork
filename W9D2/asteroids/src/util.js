@@ -3,7 +3,7 @@ const Util = {
         let Surrogate = function () {};
         Surrogate.prototype = parentClass.prototype;
         childClass.prototype = new Surrogate();
-        childClass.prototype
+        childClass.prototype.constructor = childClass;
     }
 };
 
