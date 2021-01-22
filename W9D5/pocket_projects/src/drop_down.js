@@ -15,7 +15,7 @@ const dogLinkCreator = () => {
   dogBreeds.forEach(breed => {
     let dogLink = document.createElement("a");
     dogLink.innerHTML = breed;
-    dogLink.href = dogBreeds[breed];
+    dogLink.href = dogs[breed];
     let dogLi = document.createElement("li");
     dogLi.appendChild(dogLink);
     dogLi.classList.add("dog-link");
@@ -32,3 +32,19 @@ const attachDogLinks = () => {
 }
 
 attachDogLinks();
+
+const dogList = document.querySelector(".drop-down-dog-list");
+
+const handleEnter = (e) => {
+  let el = e.target;
+  el.classList.toggle("show");
+}
+
+const handleLeave = (e) => {
+  let el = e.target;
+  el.classList.toggle("show");
+}
+
+
+dogList.addEventListener("mouseenter", handleEnter);
+dogList.addEventListener("mouseleave", handleLeave);
