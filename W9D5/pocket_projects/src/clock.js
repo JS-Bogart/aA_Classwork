@@ -21,9 +21,9 @@ class Clock {
     printTime() {
         // Format the time in HH:MM:SS
         const timeString = [this.hours, this.minutes, this.seconds].join(":");
-        htmlGenerator(timeString, partyHeader);
+        return timeString;
         // Use console.log to print it.
-        console.log(timeString);
+        // console.log(timeString);
     }
 
     _tick() {
@@ -31,7 +31,9 @@ class Clock {
         this._incrementSeconds();
 
         // 2. Call printTime.
-        this.printTime();
+        // this.printTime();
+        let clockElement = document.getElementById("clock");
+        warmUp.htmlGenerator(this.printTime(), clockElement);
     }
 
     _incrementSeconds() {
