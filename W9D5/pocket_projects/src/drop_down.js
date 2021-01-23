@@ -34,15 +34,18 @@ const attachDogLinks = () => {
 attachDogLinks();
 
 const dogList = document.querySelector(".drop-down-dog-list");
+const dogLis = document.querySelectorAll(".dog-link");
 
 const handleEnter = (e) => {
-  let el = e.target;
-  el.classList.toggle("show");
+  dogLis.forEach(el => {
+    el.classList.toggle("show");
+  })
 }
 
 const handleLeave = (e) => {
-  let el = e.target;
-  el.classList.toggle("show");
+  dogLis.forEach(el => {
+    el.classList.toggle("show");
+  })
 }
 
 

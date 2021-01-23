@@ -51,3 +51,30 @@ h1 {
   opacity: 1;
   transform: translateX(0%) scale(1);
 }
+
+.drop-down-dog-list:hover {
+  border: 1px solid black;
+  margin-left: 400px;
+  margin-right: 400px;
+  background-color: white;
+  box-shadow: 5px 10px #888888;
+}
+
+.dog-link {
+  /* display: none; */
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.show:not(:last-child) {
+  border-bottom: 1px solid #888888;
+}
+
+.show:hover {
+  background-color: yellow;
+}
