@@ -8,9 +8,18 @@ class Tabs extends React.Component {
         }
     }
 
+
     render() {
         return(
-            <h1>It works!</h1>
+            <div>    
+                <h1>It works!</h1>
+                {<div className="tab">
+                    <h1>{prop[0].title}</h1>
+                    <body>
+                        {prop[0].content}
+                    </body>
+                </div>}
+            </div>
         )
     }
 }
