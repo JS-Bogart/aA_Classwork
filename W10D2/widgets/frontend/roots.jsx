@@ -1,0 +1,20 @@
+import React from 'react';
+import Clock from './clock';
+import Tabs from './tabs';
+
+class Roots extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render (){
+        return(
+            <div>
+                <Clock/>
+                <Tabs/>
+            </div>
+        )
+    }
+}
+
+export default Roots;
