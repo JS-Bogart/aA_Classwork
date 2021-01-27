@@ -12,22 +12,38 @@ h2 {
 
 .clock-widget {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: baseline;
+    align-items: center;
+
+
 }
 
 .full-clock {
-    margin-left: 200px;
-    margin-right: 200px;
+    display: flex;
+    flex-direction: column;
     background-color: springgreen;
     border: 2px solid black;
+    width: 300px;
+    height: 150px;
+    justify-content: center;
+
 }
 
 .time {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    /* margin: 25px; */
+
 }
 
 .date {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    /* margin: 25px; */
+
 }
