@@ -4,26 +4,33 @@ import Tile from './tile';
 class Board extends React.Component {
   constructor(props) {
     super(props);
-    this.boardArr = this.props.board.map((row, i) => {
+    // debugger
+    this.boardArr = props.board.grid.map((row, i) => {
       return(
-        row.map((tile, j) => {
-          return (
-            <Tile 
-              tile={tile} 
-              updateGame={this.props.updateGame}
-            />
-          )
-        })
+        <div className="row" key={i}>
+            {row.map((tile, j) => {
+                // debugger
+              return (
+                <Tile 
+                  tile={tile} 
+                  updateGame={props.updateGame}
+                  key={`${i}${j}`}
+                />
+              )
+            })}
+        </div>
       )
     })
   }
 
   render() {
     return(
-      <div>
+      <div className="board">
         {this.boardArr}
       </div>
     )
   }
 
 }
+
+export default Board;
