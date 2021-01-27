@@ -6,6 +6,7 @@ class Tabs extends React.Component {
         this.state = {
             tabIndex: 0
         }
+        console.log(props[0].one)
     }
 
 
@@ -14,9 +15,9 @@ class Tabs extends React.Component {
             <div>    
                 <h1>It works!</h1>
                 {<div className="tab">
-                    <h1>{prop[0].title}</h1>
+                    <h1>{props[0].key}</h1>
                     <body>
-                        {prop[0].content}
+                        {props[0].value}
                     </body>
                 </div>}
             </div>

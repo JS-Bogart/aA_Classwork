@@ -6,7 +6,7 @@ class Roots extends React.Component {
     constructor(props) {
         super(props);
         this.getTabs = new Tabs([{'one': 'I am the first'}, {'two': 'I am the second'}, {'three': 'I am the third'}])
-
+        console.log(this.getTabs)
     }
 
 
@@ -14,7 +14,6 @@ class Roots extends React.Component {
         return(
             <div>
                 <Clock/>
-                <this.getTabs/>
             </div>
         )
     }
