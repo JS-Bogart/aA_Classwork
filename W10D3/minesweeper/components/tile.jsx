@@ -14,7 +14,6 @@ class Tile extends React.Component {
 
     render() {
         const tile = this.props.tile;
-        console.log(tile.explored)
         let klass, text, count;
         if (tile.explored) {
             if (tile.bombed) {
