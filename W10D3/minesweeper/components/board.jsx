@@ -5,28 +5,28 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     // debugger
-    this.boardArr = props.board.grid.map((row, i) => {
-      return(
-        <div className="row" key={i}>
-            {row.map((tile, j) => {
-                // debugger
-              return (
-                <Tile 
-                  tile={tile} 
-                  updateGame={props.updateGame}
-                  key={`${i}${j}`}
-                />
-              )
-            })}
-        </div>
-      )
-    })
   }
 
   render() {
+    const boardArr = this.props.board.grid.map((row, i) => {
+        return (
+            <div className="row" key={i}>
+                {row.map((tile, j) => {
+                    // debugger
+                    return (
+                        <Tile
+                            tile={tile}
+                            updateGame={this.props.updateGame}
+                            key={`${i}${j}`}
+                        />
+                    )
+                })}
+            </div>
+        )
+    })
     return(
       <div className="board">
-        {this.boardArr}
+        {boardArr}
       </div>
     )
   }

@@ -14,7 +14,7 @@
 }
 
 .tile {
-    border-style: outset;
+    /* border-style: outset; */
     position: relative;
     float: left;
     background: lightgray;
@@ -25,6 +25,22 @@
     font-weight: bold;
 }
 
-.explored {
+.unrevealed, .flagged {
+    border-style: outset;
+}
+
+.revealed, .bombed {
     border-style: inset;
+    position: relative;
+    float: left;
+    background: lightgray;
+    height: 20px;
+    width: 20px;
+    padding: 3px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.flagged, .bombed {
+    color: red;
 }

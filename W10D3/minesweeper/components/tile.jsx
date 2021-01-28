@@ -7,18 +7,20 @@ class Tile extends React.Component {
     }
 
     handleClick(e) {
-        const flagged = e.altKey 
-        debugger
-        this.props.updateGame(this.props.tile, flagged)
+        const flagged = e.altKey ? true : false;
+        // debugger
+        this.props.updateGame(this.props.tile, flagged);
     }
 
     render() {
         const tile = this.props.tile;
+        console.log(tile.explored)
         let klass, text, count;
         if (tile.explored) {
             if (tile.bombed) {
                 klass = "bombed";
                 text = "\u2622";
+                // text = "B";
             } else {
                 klass = "revealed";
                 count = tile.adjacentBombCount();
@@ -27,12 +29,12 @@ class Tile extends React.Component {
         } else if (tile.flagged) {
             klass = "flagged";
             text = "\u2691";
+            // text = "F";
         } else {
             klass = "unrevealed";
             text = ""
         }
         klass = `tile ${klass}`
-
         return (
             <div className={klass} onClick={this.handleClick} >
                 {text}
