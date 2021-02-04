@@ -5,10 +5,10 @@ import PokemonDetailsContainer from './../components/pokemon/pokemon_details_con
 
 
 const App = () => (
-    <Switch>
+    <div>
         <Route path="/pokemon/:id" component={PokemonDetailsContainer} />
         <Route path="/" component={PokemonIndexContainer} />
-    </Switch>
+    </div>
 )
 
 export default App;
