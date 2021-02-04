@@ -1,0 +1,16 @@
+Started GET "/" for ::1 at 2021-02-04 15:20:13 -0800
+
+ActiveRecord::NoDatabaseError - FATAL:  database "bbnb_project_development" does not exist:
+
+Started POST "/__better_errors/54d2ae7d274df077/variables" for ::1 at 2021-02-04 15:20:14 -0800
+  [1m[35m (1659.5ms)[0m  [1m[35mCREATE DATABASE "bbnb_project_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (295.0ms)[0m  [1m[35mCREATE DATABASE "bbnb_project_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-02-04 15:23:49 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 13713ms (Views: 13708.1ms | ActiveRecord: 0.0ms)
+
+
