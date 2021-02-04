@@ -2,6 +2,7 @@ import React from 'react';
 
 class Signup extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       username: '',
       email: '',
@@ -11,7 +12,7 @@ class Signup extends React.Component {
   }
 
   handleInput(type) {
-    return () => {
+    return (e) => {
       this.setState({ [type]: e.target.value })
     };
   }
