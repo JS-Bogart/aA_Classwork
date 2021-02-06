@@ -47,3 +47,331 @@ Migrating to CreateUsers (20210204232907)
   ↳ bin/rails:9
   [1m[35m (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-02-05 16:05:13 -0800
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/scottbogart/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 4754ms (Views: 4753.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-05 16:07:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 1608ms (Views: 1606.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-05 16:09:18 -0800
+Processing by StaticPagesController#root as */*
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 440ms (Views: 437.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/?username=420bongrippa&password=[FILTERED]" for ::1 at 2021-02-05 16:13:51 -0800
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/users/?username=420bongrippa&password=[FILTERED]" for ::1 at 2021-02-05 16:15:28 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"420bongrippa", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 5ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/api/users/?username=420bongrippa&password=[FILTERED]" for ::1 at 2021-02-05 16:21:13 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"420bongrippa", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (12.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 400 Bad Request in 78ms (ActiveRecord: 35.6ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:16:in `user_params'
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started POST "/api/users/?:username=420bongrippa&:password=[FILTERED]" for ::1 at 2021-02-05 16:21:49 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {":username"=>"420bongrippa", ":password"=>"[FILTERED]"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 400 Bad Request in 7ms (ActiveRecord: 1.1ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:16:in `user_params'
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started POST "/api/users/?username=420bongrippa&password=[FILTERED]" for ::1 at 2021-02-05 16:25:36 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"420bongrippa", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 400 Bad Request in 59ms (ActiveRecord: 2.9ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:16:in `user_params'
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started POST "/api/users/?username=420bongrippa&password=[FILTERED]&user=@user" for ::1 at 2021-02-05 16:27:46 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"420bongrippa", "password"=>"[FILTERED]", "user"=>"@user"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.7ms)
+
+
+
+NoMethodError - undefined method `permit' for "@user":String:
+  app/controllers/api/users_controller.rb:16:in `user_params'
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started POST "/api/users/?username=420bongrippa&password=[FILTERED]" for ::1 at 2021-02-05 16:28:28 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"420bongrippa", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 400 Bad Request in 122ms (ActiveRecord: 2.8ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:16:in `user_params'
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started POST "/api/users/?username=abcd&password=[FILTERED]" for ::1 at 2021-02-05 16:35:29 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"abcd", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 400 Bad Request in 41ms (ActiveRecord: 1.7ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:16:in `user_params'
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started POST "/api/users/?username=abcd&password=[FILTERED]" for ::1 at 2021-02-05 16:40:12 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"abcd", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Unpermitted parameter: :format
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "abcd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6XeUzAz_eB2JYCqOlKIu9g"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Create (26.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "abcd"], ["password_digest", "$2a$12$vDAhSMUn1N0rS8NOHG2jcuSlAaT0x83UNertJZbGYJ5XSFCuTeNwa"], ["session_token", "6XeUzAz_eB2JYCqOlKIu9g"], ["created_at", "2021-02-06 00:40:13.836578"], ["updated_at", "2021-02-06 00:40:13.836578"]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "abcd"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "PKLtgizX4c0M8iCAMGMR2w"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Update (6.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "PKLtgizX4c0M8iCAMGMR2w"], ["updated_at", "2021-02-06 00:40:13.889413"], ["id", 1]]
+  ↳ app/models/user.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30
+Redirected to http://localhost:3000/
+Completed 302 Found in 686ms (ActiveRecord: 106.4ms)
+
+
+Started GET "/" for ::1 at 2021-02-05 16:40:14 -0800
+Processing by StaticPagesController#root as */*
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 640ms (Views: 639.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session/?username=abcd&password=[FILTERED]" for ::1 at 2021-02-05 16:41:00 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"username"=>"abcd", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/controllers/api/sessions_controller.rb:4:in `create'
+
+Started POST "/api/session" for ::1 at 2021-02-05 16:48:36 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"username"=>"abcd", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/controllers/api/sessions_controller.rb:4:in `create'
+
+Started GET "/" for ::1 at 2021-02-05 16:49:10 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 158ms (Views: 157.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session/?username=abcd&password=[FILTERED]" for ::1 at 2021-02-05 16:49:50 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"username"=>"abcd", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/controllers/api/sessions_controller.rb:4:in `create'
+
+Started POST "/api/user/?username=abcd&password=[FILTERED]" for ::1 at 2021-02-05 16:50:07 -0800
+  
+ActionController::RoutingError (No route matches [POST] "/api/user"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/users/?username=abcd&password=[FILTERED]" for ::1 at 2021-02-05 16:50:18 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"abcd", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PKLtgizX4c0M8iCAMGMR2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Redirected to http://localhost:3000/
+Filter chain halted as :redirect_if_logged_in rendered or redirected
+Completed 302 Found in 96ms (ActiveRecord: 28.2ms)
+
+
+Started GET "/" for ::1 at 2021-02-05 16:50:18 -0800
+Processing by StaticPagesController#root as */*
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 186ms (Views: 185.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-05 16:50:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 85ms (Views: 84.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users/?username=abcde&password=[FILTERED]" for ::1 at 2021-02-05 16:50:50 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"abcde", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PKLtgizX4c0M8iCAMGMR2w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Redirected to http://localhost:3000/
+Filter chain halted as :redirect_if_logged_in rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2021-02-05 16:50:50 -0800
+Processing by StaticPagesController#root as */*
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 291ms (Views: 288.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session/?username=abcde&password=[FILTERED]" for ::1 at 2021-02-05 16:51:59 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"username"=>"abcde", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/controllers/api/sessions_controller.rb:4:in `create'
+
+Started POST "/api/session/?username=abcde&password=[FILTERED]" for ::1 at 2021-02-05 16:52:36 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"username"=>"abcde", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/controllers/api/sessions_controller.rb:4:in `create'
+
+Started GET "/" for ::1 at 2021-02-05 16:52:49 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 100ms (Views: 99.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users?username=abcd&password=[FILTERED]" for ::1 at 2021-02-05 16:55:43 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"username"=>"abcd", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 400 Bad Request in 30ms (ActiveRecord: 7.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:16:in `user_params'
+  app/controllers/api/users_controller.rb:5:in `create'
+
